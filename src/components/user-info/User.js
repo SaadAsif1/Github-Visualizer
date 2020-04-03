@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import UserInfo from './UserInfo';
+import UserLoading from './UserLoading';
+import './user.css';
 
 export default function User() {
   const [values, setValues] = useState({
     userData: ''
   });
+
+  // Destructuring value
+  const { userData } = values;
 
   useEffect(() => {
     axios
@@ -19,5 +25,5 @@ export default function User() {
       });
   }, []);
 
-  return <div></div>;
+  return <div>{userData ? <UserInfo data={userData} /> : <UserLoading />}</div>;
 }

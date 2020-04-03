@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Open+Sans:wght@300&family=Roboto&display=swap');
+
+.background {
+  background-color: rgb(26, 30, 34);
+  color: rgb(200, 225, 255);
+  height: 40rem;
+}
+
+.container {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.avatar {
+  margin-bottom: 1.5rem;
+  border-radius: 100%;
+  width: 8.6rem;
+  height: 8.6rem;
+  border: solid 8px rgb(0, 112, 243);
+}
+
+.name {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(246, 248, 250);
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+}
+
+.username {
+  font-family: 'IBM Plex Mono', monospace;
+  color: rgb(0, 112, 243);
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.username:hover {
+  text-decoration: underline;
+}
+
+/* info boxes */
+.info-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 2rem;
+  color: rgb(246, 248, 250);
+}
+
+.info-box {
+  background-color: rgb(36, 41, 46);
+  width: 9rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.9rem;
+  border-radius: 0.25rem;
+  margin: 0 0.3rem;
+}
+
+.info-number {
+  font-size: 1.5rem;
+  font-weight: 50;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+.info-name {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: rgba(200, 225, 255, 0.7);
+  letter-spacing: 1px;
+}
+
+/* Description */
+
+.description-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.description {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+
+.description-text {
+  padding-left: 0.5rem;
+}
