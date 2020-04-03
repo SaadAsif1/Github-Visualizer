@@ -5,7 +5,8 @@ import UserInfo from './components/user-info/User';
 export default function Routes() {
   return (
     <Switch>
-      <Route path='/' component={() => <UserInfo />} />
+      <Route to='/user?id=username' component={UserInfo} />
+      <Route exact path='/' component={UserInfo} />
     </Switch>
   );
 }

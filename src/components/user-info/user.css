@@ -3,12 +3,11 @@
 .background {
   background-color: rgb(26, 30, 34);
   color: rgb(200, 225, 255);
-  height: 40rem;
+  height: 38rem;
 }
 
 .container {
   text-align: center;
-  padding-top: 3rem;
 }
 
 .avatar {
@@ -39,19 +38,37 @@
   text-decoration: underline;
 }
 
+/* Description */
+
+.description-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.6rem -10rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: initial;
+  margin: 0 1.5rem;
+  font-weight: 300;
+}
+
 /* info boxes */
 .info-display {
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Open Sans', sans-serif;
-  margin-top: 2rem;
+  margin-top: 2.3rem;
   color: rgb(246, 248, 250);
 }
 
 .info-box {
   background-color: rgb(36, 41, 46);
-  width: 9rem;
+  width: 9.3rem;
   padding-top: 0.7rem;
   padding-bottom: 0.9rem;
   border-radius: 0.25rem;
@@ -70,24 +87,6 @@
   text-transform: uppercase;
   color: rgba(200, 225, 255, 0.7);
   letter-spacing: 1px;
-}
-
-/* Description */
-
-.description-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.6rem -10rem;
-  margin-bottom: 2rem;
-}
-
-.description {
-  font-family: 'Roboto', sans-serif;
-  display: flex;
-  align-items: initial;
-  margin: 0 1.5rem;
-  font-weight: 300;
 }
 
 .description-text {
@@ -110,7 +109,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 17rem;
+  padding-top: 14rem;
 }
 
 .loading {
@@ -144,4 +143,40 @@
     height: 58px;
     opacity: 0;
   }
+}
+
+/* input */
+
+.back {
+  background-color: rgb(26, 30, 34);
+  color: rgb(200, 225, 255);
+}
+.github-input {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: rgb(44, 47, 51);
+  border: none;
+  margin: 1rem;
+  width: 15rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  color: rgb(246, 248, 250);
+  padding: 0.3rem 1rem;
+  border-radius: 9px;
+  outline: none;
+}
+
+/* not found */
+.notfound-container {
+  text-align: center;
+  padding-top: 9rem;
+}
+
+.notfound-icon {
+  color: rgb(0, 112, 243);
+  font-size: 10rem;
+}
+
+.notfound-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 2rem;
 }
