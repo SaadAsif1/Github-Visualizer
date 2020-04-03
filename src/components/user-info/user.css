@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Open+Sans:wght@300&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Open+Sans:wght@300&family=Roboto&family=Roboto:wght@300&display=swap');
 
 .background {
   background-color: rgb(26, 30, 34);
@@ -78,16 +78,70 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1.5rem 0;
+  margin: 1.6rem -10rem;
+  margin-bottom: 2rem;
 }
 
 .description {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
-  align-items: center;
+  align-items: initial;
   margin: 0 1.5rem;
+  font-weight: 300;
 }
 
 .description-text {
   padding-left: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Loader */
+@keyframes bg {
+  0% {
+    background: #000;
+  }
+  100% {
+    background: #fff;
+  }
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 17rem;
+}
+
+.loading {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.loading div {
+  position: absolute;
+  background: #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: loading 1.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.loading div:nth-child(2) {
+  animation-delay: -0.7s;
+}
+@keyframes loading {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
 }
