@@ -2,11 +2,13 @@ import React from 'react';
 import Routes from './Routes';
 import GithubIcon from './components/GithubIcon';
 
-export default function App() {
+const App = () => {
   return (
     <div>
       <GithubIcon />
       <Routes />
     </div>
   );
-}
+};
+
+export default App;

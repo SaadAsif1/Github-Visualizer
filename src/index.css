@@ -6,7 +6,9 @@ body {
   -ms-box-sizing: border-box; /* Internet Explorer 8 */
   -webkit-box-sizing: border-box; /* Safari 3 */
   -khtml-box-sizing: border-box; /* Konqueror */
-  background: #f4f4f4;
+  background-color: rgb(246, 248, 250);
+  height: 1000vh;
+  overflow-x: hidden;
 }
 
 /* github icon */

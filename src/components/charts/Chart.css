@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -6.5rem;
+}
+
+.chart-title {
+  font-family: 'Nunito Sans', sans-serif;
+  border-bottom: dashed 2px #cfcece;
+  font-size: 1.6rem;
+  width: 11rem;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 0.6rem;
+}
+
+.chart-card {
+  width: 350px;
+  margin: 1.2rem;
+  height: 23rem;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  padding: 1rem 1.3rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.chart-graphBox {
+  margin-top: 1.5rem;
+}
+
+/* Forks Not Found */
+.error-container {
+  margin: 5rem auto;
+}
+
+.error-icon {
+  font-size: 6rem;
+}
+
+.error-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2rem;
+}
