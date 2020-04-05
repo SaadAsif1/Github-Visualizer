@@ -21,6 +21,12 @@ const TopLangChart = ({ history }) => {
         return setValues({ ...values, error: true });
       }
 
+      console.log(stats);
+
+      if (stats.length === 0) {
+        return setValues({ ...values, error: true });
+      }
+
       let data = [];
       let labels = [];
       let backgroundColor = [];

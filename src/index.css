@@ -7,8 +7,12 @@ body {
   -webkit-box-sizing: border-box; /* Safari 3 */
   -khtml-box-sizing: border-box; /* Konqueror */
   background-color: rgb(246, 248, 250);
-  height: 1000vh;
   overflow-x: hidden;
+}
+
+.app-containter {
+  margin: 0 auto;
+  padding: 0 3rem;
 }
 
 /* github icon */

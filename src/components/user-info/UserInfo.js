@@ -38,7 +38,7 @@ const UserInfo = ({ history }) => {
     <div className='background'>
       {notFound && <UserNotFound />}
       {userData ? (
-        <div className='container'>
+        <div className='container app-containter'>
           <img src={userData.avatar_url} alt='avatar' className='avatar' />
           <div className='name'>{userData.name}</div>
           <a

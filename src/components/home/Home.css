@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Roboto&&display=swap');
+
+.home-background {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(26, 30, 34);
+  background-image: linear-gradient(rgb(26, 30, 34) 0%, rgb(36, 41, 46) 100%);
+  color: rgb(246, 248, 250);
+  height: 100vh;
+}
+
+.home-container {
+  text-align: center;
+  margin-top: -10rem;
+}
+
+.github-home {
+  color: rgb(0, 112, 243);
+  font-size: 4.7rem;
+}
+
+.home-header {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(246, 248, 250);
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.home-input {
+  font-family: 'PT Mono', monospace;
+  letter-spacing: 2px;
+  color: rgb(121, 184, 255);
+  background-color: rgb(38, 48, 60);
+  padding: 1rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  text-align: center;
+  width: 28rem;
+}

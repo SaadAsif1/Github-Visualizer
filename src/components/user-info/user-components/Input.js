@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import queryString from 'query-string';
-
 import { withRouter } from 'react-router-dom';
 
 const Input = ({ history }) => {
@@ -39,6 +38,7 @@ const Input = ({ history }) => {
         onChange={handleChange('githubName')}
         onKeyDown={onEnter}
         value={githubName}
+        spellCheck='false'
       />
     </div>
   );
