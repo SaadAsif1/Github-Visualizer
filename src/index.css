@@ -8,7 +8,6 @@ body {
   -khtml-box-sizing: border-box; /* Konqueror */
   background-color: rgb(246, 248, 250);
   overflow-x: hidden;
-  height: 200vh;
 }
 
 .app-container {

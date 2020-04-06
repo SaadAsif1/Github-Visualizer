@@ -17,6 +17,12 @@ const TopLangChart = ({ history }) => {
 
   useEffect(() => {
     const username = queryString.parse(history.location.search);
+
+    // Check for incorrect url
+    if (!username.id) {
+      return setValues({ ...values, error: true });
+    }
+
     const me = new GhPolyglot(username.id, process.env.REACT_APP_GITHUB_ACCESS_TOKEN);
 
     // Show Loading

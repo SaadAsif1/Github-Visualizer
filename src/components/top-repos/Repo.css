@@ -17,7 +17,6 @@
 
 .repo-container h1 {
   font-family: 'Open Sans', sans-serif;
-
   display: inline-block;
   font-size: 1.75rem;
   background-image: linear-gradient(
@@ -120,4 +119,18 @@ li:hover {
 
 .github-icon {
   margin-right: 0.3rem;
+}
+
+/* Repo Error */
+.repo-error-container {
+  text-align: center;
+}
+
+.repo-error-icons {
+  font-size: 7rem;
+}
+
+.repo-error {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.4rem;
 }

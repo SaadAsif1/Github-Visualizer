@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import Routes from './Routes';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import UserInfo from './components/user-info/User';
+import Charts from './components/charts/Charts';
 import Repos from './components/top-repos/Repos';
-import axios from 'axios';
+import Home from './components/home/Home';
+import GithubIcon from './components/GithubIcon';
+import NotFound from './components/404/Index';
+import Footer from './components/footer/Footer';
 
-const App = () => {
-  useState(() => {
-    // var config = {
-    //   Headers: { Authorization: process.env.REACT_APP_GITHUB_ACCESS_TOKEN }
-    // };
-    // axios
-    //   .get(
-    //     `https://api.github.com/rate_limit?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-    //   )
-    //   .then(res => {
-    //     console.log(res);
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
-  }, []);
-
+export default function App() {
   return (
-    <div>
-      <Routes />
-    </div>
+    <Switch>
+      <Route
+        path='/user'
+        component={() => (
+          <div>
+            <GithubIcon />
+            <UserInfo />
+            <Charts />
+            <Repos />
+            <Footer />
+          </div>
+        )}
+      />
+      <Route exact path='/' component={Home} />
+      <Route component={NotFound} />
+    </Switch>
   );
-};
-
-export default App;
+}

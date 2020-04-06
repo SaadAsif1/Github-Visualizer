@@ -24,6 +24,11 @@ const StarsRepoChart = ({ history }) => {
     // Query id
     const username = queryString.parse(history.location.search);
 
+    // Check for incorrect url
+    if (!username.id) {
+      return setValues({ ...values, error: true });
+    }
+
     // Headers
     var myHeaders = new Headers();
     myHeaders.append(

@@ -4,6 +4,7 @@ import queryString from 'query-string';
 import Select from 'react-select';
 import FlipMove from 'react-flip-move';
 import Octicon, { Repo, Star, RepoForked } from '@primer/octicons-react';
+import Error from './ErrorRepos';
 import { langColors } from '../../utils/langcolors';
 import './Repo.css';
 
@@ -11,10 +12,11 @@ const Repos = ({ history }) => {
   const [values, setValues] = useState({
     selectedOption: null,
     allRepos: '',
-    topRepos: ''
+    topRepos: '',
+    error: false
   });
 
-  const { allRepos, topRepos } = values;
+  const { allRepos, topRepos, error } = values;
 
   // When compoenets mounts
   useEffect(() => {
@@ -40,17 +42,28 @@ const Repos = ({ history }) => {
     )
       .then(response => response.json())
       .then(result => {
-        setValues({ ...values, allRepos: result });
+        if (result.message) {
+          return setValues({ ...values, error: true });
+        }
+        setValues({ ...values, allRepos: result, error: false });
       })
       .catch(err => {
-        console.log(err);
+        setValues({ ...values, error: true });
       });
   }, [history.location.search]);
 
   // when result is given to total Repos
+  useEffect(() => {
+    if (!error) {
+      getTopRepos('stars');
+    }
+  }, [allRepos]);
 
   const getTopRepos = type => {
     if (allRepos !== '') {
+      if (allRepos.length === 0) {
+        return setValues({ ...values, error: true });
+      }
       const LIMIT = 8;
       const map = {
         stars: 'stargazers_count',
@@ -119,54 +132,58 @@ const Repos = ({ history }) => {
           />
         </div>
       </div>
-      <div className='repo-list'>
-        {topRepos && (
-          <FlipMove typeName='ul'>
-            {topRepos.map(repo => (
-              <li key={repo.id}>
-                <a
-                  href={repo.html_url}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='repo'
-                >
-                  <div className='repo__top'>
-                    <div className='repo__name'>
-                      <Octicon icon={Repo} />
-                      <h3 className='repo-header'>{repo.name}</h3>
+      {error ? (
+        <Error />
+      ) : (
+        <div className='repo-list'>
+          {topRepos && (
+            <FlipMove typeName='ul'>
+              {topRepos.map(repo => (
+                <li key={repo.id}>
+                  <a
+                    href={repo.html_url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='repo'
+                  >
+                    <div className='repo__top'>
+                      <div className='repo__name'>
+                        <Octicon icon={Repo} />
+                        <h3 className='repo-header'>{repo.name}</h3>
+                      </div>
+                      <p className='repo-subheading'>{repo.description}</p>
                     </div>
-                    <p className='repo-subheading'>{repo.description}</p>
-                  </div>
-                  <div className='repo-stats'>
-                    <div className='repo-stats-left'>
-                      <div
-                        className='language'
-                        style={{
-                          backgroundColor: !langColors[repo.language]
-                            ? 'blue'
-                            : langColors[repo.language]
-                        }}
-                      />
-                      {repo.language}
-                      <span className='repo-icon'>
-                        <Octicon icon={Star} className='github-icon' />
-                        {repo.stargazers_count.toLocaleString()}
-                      </span>
-                      <span>
-                        <Octicon icon={RepoForked} className='github-icon' />
-                        {repo.forks.toLocaleString()}
-                      </span>
+                    <div className='repo-stats'>
+                      <div className='repo-stats-left'>
+                        <div
+                          className='language'
+                          style={{
+                            backgroundColor: !langColors[repo.language]
+                              ? 'blue'
+                              : langColors[repo.language]
+                          }}
+                        />
+                        {repo.language}
+                        <span className='repo-icon'>
+                          <Octicon icon={Star} className='github-icon' />
+                          {repo.stargazers_count.toLocaleString()}
+                        </span>
+                        <span>
+                          <Octicon icon={RepoForked} className='github-icon' />
+                          {repo.forks.toLocaleString()}
+                        </span>
+                      </div>
+                      <div className='repo__stats--right repo-icon'>
+                        <span>{repo.size.toLocaleString()} KB</span>
+                      </div>
                     </div>
-                    <div className='repo__stats--right repo-icon'>
-                      <span>{repo.size.toLocaleString()} KB</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </FlipMove>
-        )}
-      </div>
+                  </a>
+                </li>
+              ))}
+            </FlipMove>
+          )}
+        </div>
+      )}
     </div>
   );
 };

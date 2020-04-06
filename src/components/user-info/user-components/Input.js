@@ -11,7 +11,11 @@ const Input = ({ history }) => {
 
   useEffect(() => {
     const value = queryString.parse(history.location.search);
-    setValues({ ...values, githubName: value.id });
+
+    // check value if {}
+    if (Object.keys(value).length > 0) {
+      setValues({ ...values, githubName: value.id });
+    }
   }, []);
 
   // Handle Input change
