@@ -3,15 +3,17 @@ import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 import { Doughnut } from 'react-chartjs-2';
 import { FaGithubAlt } from 'react-icons/fa';
+import Loader from './ChartLoader';
 
 const ForkedChart = ({ history }) => {
   const [values, setValues] = useState({
     doughnutData: '',
-    noForks: false
+    noForks: false,
+    loading: false
   });
 
   // Destructuring
-  const { doughnutData, noForks } = values;
+  const { doughnutData, noForks, loading } = values;
 
   // sort array descenting order
   function numberDes(a, b) {
@@ -38,6 +40,9 @@ const ForkedChart = ({ history }) => {
       redirect: 'follow'
     };
 
+    // Show Loader
+    setValues({ ...values, loading: true });
+
     fetch(
       `https://api.github.com/users/${username.id}/repos?page=1&per_page=100`,
       requestOptions
@@ -54,7 +59,7 @@ const ForkedChart = ({ history }) => {
 
         // all forks are 0
         if (allEqual(forks)) {
-          return setValues({ ...values, noForks: true });
+          return setValues({ ...values, noForks: true, loading: false });
         }
 
         let labels = [];
@@ -71,6 +76,7 @@ const ForkedChart = ({ history }) => {
         setValues({
           ...values,
           noForks: false,
+          loading: false,
           doughnutData: {
             labels,
             datasets: [
@@ -97,8 +103,9 @@ const ForkedChart = ({ history }) => {
   return (
     <div>
       <h1 className='chart-title'>Top Forked</h1>
-
-      {noForks ? (
+      {loading ? (
+        <Loader />
+      ) : noForks ? (
         <div className='error-container'>
           <FaGithubAlt className='error-icon' />
           <div className='error-text'>No Forks</div>

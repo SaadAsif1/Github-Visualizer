@@ -3,15 +3,17 @@ import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 import { Bar } from 'react-chartjs-2';
 import { FaGithubAlt } from 'react-icons/fa';
+import Loader from './ChartLoader';
 
 const StarsRepoChart = ({ history }) => {
   const [values, setValues] = useState({
     barData: '',
-    error: false
+    error: false,
+    loading: false
   });
 
   // Destructuring
-  const { barData, error } = values;
+  const { barData, error, loading } = values;
 
   // sort array descenting order
   function numberDes(a, b) {
@@ -35,6 +37,9 @@ const StarsRepoChart = ({ history }) => {
       redirect: 'follow'
     };
 
+    // Show loader
+    setValues({ ...values, loading: true });
+
     fetch(
       `https://api.github.com/users/${username.id}/repos?page=1&per_page=100`,
       requestOptions
@@ -45,7 +50,7 @@ const StarsRepoChart = ({ history }) => {
 
         // check for errors
         if (!result[0]) {
-          return setValues({ ...values, error: true });
+          return setValues({ ...values, error: true, loading: false });
         }
 
         result.map(cur => {
@@ -66,6 +71,7 @@ const StarsRepoChart = ({ history }) => {
         setValues({
           ...values,
           error: false,
+          loading: false,
           barData: {
             labels,
             datasets: [
@@ -94,14 +100,16 @@ const StarsRepoChart = ({ history }) => {
         });
       })
       .catch(error => {
-        setValues({ ...values, error: true });
+        setValues({ ...values, error: true, loading: false });
       });
   }, [history.location.search]);
 
   return (
     <div>
       <h1 className='chart-title'>Most Starred</h1>
-      {error ? (
+      {loading ? (
+        <Loader />
+      ) : error ? (
         <div className='error-container'>
           <FaGithubAlt className='error-icon' />
           <div className='error-text'>No Starred Repos</div>

@@ -6,7 +6,7 @@ import './Chart.css';
 
 const Charts = () => {
   return (
-    <div className='chart-container app-containter'>
+    <div className='chart-container app-container'>
       <div className='chart-card'>
         <TopLangChart />
       </div>

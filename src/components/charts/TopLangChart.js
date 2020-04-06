@@ -4,27 +4,31 @@ import GhPolyglot from 'gh-polyglot';
 import queryString from 'query-string';
 import { Pie } from 'react-chartjs-2';
 import { FaGithubAlt } from 'react-icons/fa';
+import Loader from './ChartLoader';
 
 const TopLangChart = ({ history }) => {
   const [values, setValues] = useState({
     chartData: '',
-    error: false
+    error: false,
+    loading: false
   });
 
-  const { chartData, error } = values;
+  const { chartData, error, loading } = values;
 
   useEffect(() => {
     const username = queryString.parse(history.location.search);
     const me = new GhPolyglot(username.id, process.env.REACT_APP_GITHUB_ACCESS_TOKEN);
+
+    // Show Loading
+    setValues({ ...values, loading: true });
+
     me.userStats((err, stats) => {
       if (err) {
-        return setValues({ ...values, error: true });
+        return setValues({ ...values, error: true, loading: false });
       }
 
-      console.log(stats);
-
       if (stats.length === 0) {
-        return setValues({ ...values, error: true });
+        return setValues({ ...values, error: true, loading: false });
       }
 
       let data = [];
@@ -40,6 +44,7 @@ const TopLangChart = ({ history }) => {
       setValues({
         ...values,
         error: false,
+        loading: false,
         chartData: { labels, datasets: [{ backgroundColor, data }] }
       });
     });
@@ -48,7 +53,9 @@ const TopLangChart = ({ history }) => {
   return (
     <div>
       <h1 className='chart-title'>Top Languages</h1>
-      {error ? (
+      {loading ? (
+        <Loader />
+      ) : error ? (
         <div className='error-container'>
           <FaGithubAlt className='error-icon' />
           <div className='error-text'>No Languages</div>

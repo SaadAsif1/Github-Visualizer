@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap');
+
+.dropdown-container {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 7rem;
+  color: #000;
+}
+
+.repo-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 2.7rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.repo-container h1 {
+  font-family: 'Open Sans', sans-serif;
+
+  display: inline-block;
+  font-size: 1.75rem;
+  background-image: linear-gradient(
+    90deg,
+    rgb(209, 213, 218) 50%,
+    rgba(255, 255, 255, 0) 0px
+  );
+  background-size: 10px 2px;
+  padding-bottom: 6px;
+  margin: 0px;
+  background-position: center bottom;
+  background-repeat: repeat-x;
+}
+
+.repo-main-sub {
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(106, 115, 125);
+  padding: 1rem;
+}
+
+.repo-card-container {
+  margin-left: 1.5rem;
+  margin-right: 4rem;
+}
+
+/* Repo Cards */
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+li {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-direction: column;
+  color: rgb(88, 96, 105);
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -15px;
+  padding: 1rem 1.4rem;
+  border-radius: 0.25rem;
+}
+
+li:hover {
+  box-shadow: none;
+}
+
+.repo {
+  text-decoration: none;
+}
+
+.repo__name {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.repo-header {
+  margin-left: 0.5rem;
+}
+
+.repo-subheading {
+  color: rgb(110, 108, 108);
+  font-size: 0.9em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+.repo-stats {
+  display: flex;
+  -webkit-box-pack: justify;
+  font-family: 'Open Sans', sans-serif;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgb(106, 115, 125);
+  margin: 1rem 0;
+  padding-top: 1.3rem;
+}
+
+.repo-stats-left {
+  display: flex;
+  align-items: center;
+}
+
+.language {
+  display: inline;
+  padding: 0.3rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+}
+
+.repo-icon {
+  margin: 0 1rem;
+}
+
+.github-icon {
+  margin-right: 0.3rem;
+}
