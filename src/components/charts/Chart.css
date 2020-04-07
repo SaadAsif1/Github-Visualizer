@@ -94,3 +94,11 @@
     opacity: 0;
   }
 }
+
+/* Resposive */
+@media screen and (max-width: 500px) {
+  .chart-container {
+    max-width: 1200px !important;
+    margin-top: -4rem !important;
+  }
+}

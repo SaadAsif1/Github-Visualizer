@@ -43,3 +43,16 @@
   text-align: center;
   width: 28rem;
 }
+
+/* Resposive */
+@media screen and (max-width: 500px) {
+  .home-input {
+    width: 19rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  .home-header {
+    font-size: 2rem;
+  }
+}

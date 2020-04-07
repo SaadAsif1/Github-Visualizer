@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 import UserInfo from './components/user-info/User';
 import Charts from './components/charts/Charts';
 import Repos from './components/top-repos/Repos';
@@ -8,7 +9,7 @@ import GithubIcon from './components/GithubIcon';
 import NotFound from './components/404/Index';
 import Footer from './components/footer/Footer';
 
-export default function App() {
+const App = () => {
   return (
     <Switch>
       <Route
@@ -27,4 +28,6 @@ export default function App() {
       <Route component={NotFound} />
     </Switch>
   );
-}
+};
+
+export default App;

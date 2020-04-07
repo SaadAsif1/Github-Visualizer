@@ -134,3 +134,28 @@ li:hover {
   font-family: 'Open Sans', sans-serif;
   font-size: 2.4rem;
 }
+
+/* Resposive */
+@media screen and (max-width: 750px) {
+  .repo-container {
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    margin-top: 3rem;
+  }
+
+  .repo-card-container {
+    margin: 0;
+    margin-right: 2.5rem;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .repo-container h1 {
+    font-size: 1.3rem;
+    margin-left: 2.3rem;
+  }
+}

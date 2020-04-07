@@ -181,3 +181,49 @@
   font-family: 'IBM Plex Mono', monospace;
   font-size: 2rem;
 }
+
+/* Resposive */
+@media screen and (max-width: 750px) {
+  .description-container {
+    display: block;
+    text-align: center;
+  }
+
+  .description {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .back {
+    text-align: center;
+  }
+}
+
+/* Resposive */
+@media screen and (max-width: 500px) {
+  .description-container {
+    display: block;
+    text-align: center;
+  }
+
+  .description {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .back {
+    text-align: center;
+  }
+
+  .info-box {
+    padding: 0.7em;
+  }
+
+  .github-input {
+    display: none;
+  }
+
+  .avatar {
+    margin-top: 2rem;
+  }
+}

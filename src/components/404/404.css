@@ -22,6 +22,7 @@
   padding-right: 12px;
   animation: type 0.5s alternate infinite;
   color: #fff;
+  margin-top: -10rem;
 }
 
 @keyframes type {
@@ -58,4 +59,16 @@
 
 .home-button:hover {
   background: rgb(36, 133, 245);
+}
+
+/* Resposive */
+@media screen and (max-width: 500px) {
+  .home-button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .not-found-container {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
