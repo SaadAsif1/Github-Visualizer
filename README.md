@@ -25,17 +25,3 @@ Built with:
    ```bash
    npm run dev
    ```
-
-## Deployment
-
-1. Install the Now CLI
-
-   ```bash
-   npm install -g now
-   ```
-
-2. Deploy!
-
-   ```bash
-   now
-   ```
