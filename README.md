@@ -2,7 +2,7 @@
 
 A nicer look at your GitHub Profile! With charts!
 
-![](https://media.giphy.com/media/JPgoTwYOcu5sbGPdow/giphy.gif)
+![](https://media.giphy.com/media/JPgoTwYOcu5sbGPdow/giphy.gif =24x48)
 
 Built with:
 
