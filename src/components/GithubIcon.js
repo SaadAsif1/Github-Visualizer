@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Github SVG
 export default function GithubIcon() {
   return (
     <a
