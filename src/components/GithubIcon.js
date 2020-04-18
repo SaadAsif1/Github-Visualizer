@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function GithubIcon() {
   return (
+    // github Icon
     <a
       href='https://github.com/SaadAsif1/Github-Visualizer'
       className='github-corner'
