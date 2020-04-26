@@ -35,7 +35,6 @@ const UserInfo = ({ history }) => {
   }, [history.location.search]);
 
   return (
-    // background
     <div className='background'>
       {notFound && <UserNotFound />}
       {userData ? (
