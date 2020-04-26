@@ -15,7 +15,6 @@
     "chart.js": "^2.9.3",
     "express": "^4.17.1",
     "gh-polyglot": "^2.3.2",
-    "path": "^0.12.7",
     "query-string": "^6.11.1",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",

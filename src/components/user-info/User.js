@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 import UserInfo from './UserInfo';
 import Input from './user-components/Input';
-import './User.css';
+import './user.css';
 
 const User = ({ history }) => {
   const [title, setTitle] = useState('');
