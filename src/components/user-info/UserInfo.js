@@ -10,7 +10,7 @@ import UserNotFound from './UserNotFound';
 const UserInfo = ({ history }) => {
   const [values, setValues] = useState({
     userData: '',
-    notFound: false
+    notFound: false,
   });
 
   // Destructuring value
@@ -26,15 +26,16 @@ const UserInfo = ({ history }) => {
       .get(
         `https://api.github.com/users/${username.id}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
       )
-      .then(result => {
+      .then((result) => {
         setValues({ ...values, userData: result.data, notFound: false });
       })
-      .catch(error => {
+      .catch((error) => {
         setValues({ ...values, userData: '', notFound: true });
       });
   }, [history.location.search]);
 
   return (
+    // background
     <div className='background'>
       {notFound && <UserNotFound />}
       {userData ? (
